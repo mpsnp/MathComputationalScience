@@ -11,7 +11,7 @@ include_directories(${TCLAP_INCLUDE_DIR})
 
 #set(COMMON_SOURCES CFunction.h CFunction.cpp)
 
-set(INTERPOLATION_SOURCE_FILES interpolation.cpp ${COMMON_SOURCES})
+set(INTERPOLATION_SOURCE_FILES interpolation.cpp ${COMMON_SOURCES} CInerpolator.h)
 add_executable(interpolation ${INTERPOLATION_SOURCE_FILES})
 
 set(SOLVER_SOURCE_FILES solver.cpp)
