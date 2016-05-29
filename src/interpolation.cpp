@@ -13,7 +13,7 @@ void interpolate(TCLAP::ValueArg<string> &type, vector <Point> &input);
 
 map<string, CInerpolator *> initializeInterpolators();
 
-void drawLine(string &name, vector <Point> data);
+void drawLine(const string &name, vector <Point> &data);
 
 void interpolateAndDraw(const string &name, CInerpolator *interpolator, vector <Point> &input);
 
@@ -55,7 +55,7 @@ void interpolate(TCLAP::ValueArg<string> &type, vector<Point> &input) {
     }
 }
 
-void interpolateAndDraw(string &name, CInerpolator *interpolator, vector<Point> &input) {
+void interpolateAndDraw(const string &name, CInerpolator *interpolator, vector<Point> &input) {
     interpolator->Interpolate(input);
     vector<Point> output = interpolator->CalculateValues(0, 4, 0.02);
     drawLine(name, output);
