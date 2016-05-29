@@ -9,5 +9,10 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 include_directories(${TCLAP_INCLUDE_DIR})
 
-set(SOURCE_FILES main.cpp CFunction.h CFunction.cpp)
-add_executable(ComputationalScience ${SOURCE_FILES})
+#set(COMMON_SOURCES CFunction.h CFunction.cpp)
+
+set(INTERPOLATION_SOURCE_FILES interpolation.cpp ${COMMON_SOURCES})
+add_executable(interpolation ${INTERPOLATION_SOURCE_FILES})
+
+set(SOLVER_SOURCE_FILES solver.cpp)
+add_executable(solver ${SOLVER_SOURCE_FILES})
